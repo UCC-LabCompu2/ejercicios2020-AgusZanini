@@ -125,3 +125,21 @@ function calculardivi(){
     num2=Number(document.getElementsByName("div_num2")[0].value);
     document.getElementsByName("div_total")[0].innerHTML=num1 / num2;
 }
+
+function cargarweb(){
+    var cant, unidad, urlcom;
+
+    cant = document.getElementById("distancia").value;
+    unidad = document.getElementsByName("unidades")[0].value;
+    url = "segundaWeb.html#" + cant + "#" + unidad;
+    window.open(urlComp);
+}
+
+function cargarresult(){
+    var urlComp, can, un;
+    urlComp = window.location.href.split("/")[5];
+
+    can = urlComp.split("#")[1];
+    can = urlComp.split("#")[2];
+    document.getElementById("dist").value= can + " " + un;
+}
