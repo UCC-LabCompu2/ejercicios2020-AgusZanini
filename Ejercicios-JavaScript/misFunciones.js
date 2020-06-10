@@ -187,3 +187,44 @@ function dibujar(event) {
 
         canvas.width = canvas.width;
     }
+
+    function dibujarcuadriculado(){
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        var alturamax = canvas.height;
+        var anchomax = canvas.height;
+
+        ctx.beginPath();
+        for(var i=0;i<alturamax;) {
+            ctx.moveTo(0, i);
+            ctx.lineTo(anchomax, i);
+            ctx.strokeStyle = "#680b23";
+            ctx.stroke();
+            i = i+20;
+        }
+        ctx.closePath();
+        ctx.beginPath();
+        for(var i=0;i<anchomax;) {
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, alturamax);
+            ctx.strokeStyle = "#680b23";
+            ctx.stroke();
+            i = i+20;
+        }
+        ctx.closePath();
+
+        ctx.beginPath();
+            ctx.moveTo(0, alturamax/2);
+            ctx.lineTo(anchomax, alturamax/2);
+            ctx.strokeStyle = "#0022ff";
+            ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.moveTo(anchomax/2, 0);
+        ctx.lineTo(anchomax/2, alturamax);
+        ctx.strokeStyle = "#0327fd";
+        ctx.stroke();
+        ctx.closePath();
+    }
