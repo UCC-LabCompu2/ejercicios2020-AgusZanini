@@ -228,3 +228,19 @@ function dibujar(event) {
         ctx.stroke();
         ctx.closePath();
     }
+
+    function dibujarimagen(posX, posY){
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+
+        console.log(posX, posY);
+        var img = new image();
+        img.src = "images/auto.png";
+
+        canvas.width=canvas.width;
+
+        img.onload=function()
+        {
+            ctx.drawImage(img, posX, posY);
+        }
+}
