@@ -229,12 +229,12 @@ function dibujar(event) {
         ctx.closePath();
     }
 
-    function dibujarimagen(posX, posY){
+    /*function dibujarimagen(posX, posY){
         var canvas = document.getElementById("mycanvas");
         var ctx = canvas.getContext("2d");
 
         console.log(posX, posY);
-        var img = new image();
+        var img = new Image();
         img.src = "images/auto.png";
 
         canvas.width=canvas.width;
@@ -243,26 +243,33 @@ function dibujar(event) {
         {
             ctx.drawImage(img, posX, posY);
         }
+}*/
+
+function dibujarimagen(px, py) {
+    var canvas=document.getElementById("myCanvas");
+    var contex=canvas.getContext("2d");
+    console.log(px,py);
+    var  img=new Image();
+    img.src="images/auto.png";
+    canvas.width=canvas.width;
+    img.onload=function() {
+        contex.drawImage(img,px, py);
+    }
 }
 x=0;
 dx=2;
-function animarAuto(){
-    var canvas = document.getElementById("mycanvas");
-    var ctx = canvas.getContext("2d");
-
-    console.log(posX, posY);
-    var img = new image();
-    img.src = "images/auto.png";
-
+function animarauto() {
+    var canvas=document.getElementById("myCanvas");
+    var contex=canvas.getContext("2d");
     canvas.width=canvas.width;
-
-    img.onload=function()
-    {
-        ctx.drawImage(img, x, 100);
+    var  img=new Image();
+    img.src="images/auto.png";
+    img.onload=function() {
+        contex.drawImage(img,x, 100);
     }
-
     if(x>canvas.width){
         x=0;
     }
     x+=dx;
+
 }
